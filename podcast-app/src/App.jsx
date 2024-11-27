@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import { FavoritesProvider } from './context/FavouritesContext';
-import AppRoutes from './routes/AppRoutes';
+import AppRoutes from './components/AppRoutes';
 import Navbar from './components/Navbar';
 
 function App() {
