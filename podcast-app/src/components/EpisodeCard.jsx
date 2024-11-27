@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { FavoritesContext } from '../context/FavoritesContext';
+import { FavoritesContext } from '../context/FavouritesContext';
+import AudioPlayer from './AudioPlayer';
 
 function EpisodeCard({ episode, seasonNumber, showTitle }) {
   const { addFavorite, removeFavorite, isFavorite } = useContext(FavoritesContext);
@@ -30,11 +31,7 @@ function EpisodeCard({ episode, seasonNumber, showTitle }) {
         >
           {isEpisodeFavorite ? '❤️' : '🤍'}
         </button>
-        <audio
-          src={episode.file}
-          controls
-          className="audio-player"
-        />
+        <AudioPlayer src={episode.file} />
       </div>
     </div>
   );

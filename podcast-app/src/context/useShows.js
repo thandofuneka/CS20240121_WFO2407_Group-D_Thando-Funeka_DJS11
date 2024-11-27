@@ -9,7 +9,9 @@ export function useShows() {
   useEffect(() => {
     const fetchShows = async () => {
       try {
+        console.log('Fetching shows...');
         const data = await api.getAllShows();
+        console.log('Fetched shows:', data);
         const sortedShows = data.sort((a, b) => 
           a.title.localeCompare(b.title)
         );

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useShows } from '../hooks/useShows';
-import ShowCard from '../components/ShowCard';
+import { useShows } from '../context/useShows';
+import ShowCard from '../components/ShowCards';
 
 function Home() {
   const { shows, loading, error } = useShows();
