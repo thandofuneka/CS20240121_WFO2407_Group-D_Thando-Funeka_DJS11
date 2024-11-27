@@ -15,6 +15,7 @@ function SeasonList({ seasons, selectedSeason }) {
             key={episode.episode}
             episode={episode}
             seasonNumber={selectedSeason}
+            showTitle={currentSeason.showTitle}
           />
         ))}
       </div>

@@ -45,6 +45,7 @@ function ShowDetails() {
       <SeasonList 
         seasons={show.seasons}
         selectedSeason={selectedSeason}
+        showTitle={show.title}
       />
     </div>
   );

@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { FavoritesContext } from '../context/FavoritesContext';
 
-function EpisodeCard({ episode, seasonNumber }) {
-  const [isPlaying, setIsPlaying] = useState(false);
+function EpisodeCard({ episode, seasonNumber, showTitle }) {
+  const { addFavorite, removeFavorite, isFavorite } = useContext(FavoritesContext);
+  const isEpisodeFavorite = isFavorite(episode.id);
 
-  const handlePlay = () => {
-    setIsPlaying(!isPlaying);
+
+  const handleFavoriteToggle = () => {
+    if (isEpisodeFavorite) {
+      removeFavorite(episode.id);
+    } else {
+      addFavorite({ ...episode, showTitle, seasonNumber });
+    }
   };
 
   return (
@@ -18,10 +25,10 @@ function EpisodeCard({ episode, seasonNumber }) {
       
       <div className="episode-controls">
         <button 
-          className={`play-button ${isPlaying ? 'playing' : ''}`}
-          onClick={handlePlay}
+          className={`favorite-button ${isEpisodeFavorite ? 'favorited' : ''}`}
+          onClick={handleFavoriteToggle}
         >
-          {isPlaying ? 'Pause' : 'Play'}
+          {isEpisodeFavorite ? '❤️' : '🤍'}
         </button>
         <audio
           src={episode.file}
@@ -35,7 +42,8 @@ function EpisodeCard({ episode, seasonNumber }) {
 
 EpisodeCard.propTypes = {
   episode: PropTypes.object.isRequired,
-  seasonNumber: PropTypes.number.isRequired
+  seasonNumber: PropTypes.number.isRequired,
+  showTitle: PropTypes.string.isRequired
 };
 
 export default EpisodeCard;
