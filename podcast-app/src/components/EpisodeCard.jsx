@@ -4,8 +4,8 @@ import { FavoritesContext } from '../context/FavouritesContext';
 import AudioPlayer from './AudioPlayer';
 
 function EpisodeCard({ episode, seasonNumber, showTitle }) {
-  const { addFavorite, removeFavorite, isFavorite } = useContext(FavoritesContext);
-  const isEpisodeFavorite = isFavorite(episode.id);
+  const { addFavorite, removeFavorite, favorites } = useContext(FavoritesContext);
+  const isEpisodeFavorite = favorites.some(fav => fav.id === episode.id);
 
 
   const handleFavoriteToggle = () => {
@@ -25,13 +25,13 @@ function EpisodeCard({ episode, seasonNumber, showTitle }) {
       </div>
       
       <div className="episode-controls">
+        <AudioPlayer src={episode.file} />
         <button 
           className={`favorite-button ${isEpisodeFavorite ? 'favorited' : ''}`}
           onClick={handleFavoriteToggle}
         >
           {isEpisodeFavorite ? '❤️' : '🤍'}
         </button>
-        <AudioPlayer src={episode.file} />
       </div>
     </div>
   );

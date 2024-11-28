@@ -24,7 +24,7 @@ function useShowDetails(showId) {
     }
   }, [showId]);
 
-  return { show, loading, error };
+  return { show, loading, error};
 }
 
 export default useShowDetails;

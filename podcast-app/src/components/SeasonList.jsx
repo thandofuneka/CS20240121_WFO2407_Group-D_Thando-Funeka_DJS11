@@ -1,7 +1,7 @@
 import EpisodeCard from './EpisodeCard';
 import PropTypes from 'prop-types';
 
-function SeasonList({ seasons, selectedSeason }) {
+function SeasonList({ seasons, selectedSeason, showTitle }) {
   const currentSeason = seasons.find(s => s.season === selectedSeason);
 
   if (!currentSeason) return null;
@@ -15,7 +15,7 @@ function SeasonList({ seasons, selectedSeason }) {
             key={episode.episode}
             episode={episode}
             seasonNumber={selectedSeason}
-            showTitle={currentSeason.showTitle}
+            showTitle={showTitle}
           />
         ))}
       </div>
@@ -25,7 +25,8 @@ function SeasonList({ seasons, selectedSeason }) {
 
 SeasonList.propTypes = {
   seasons: PropTypes.array.isRequired,
-  selectedSeason: PropTypes.number.isRequired
+  selectedSeason: PropTypes.number.isRequired,
+  showTitle: PropTypes.string.isRequired
 };
 
 export default SeasonList;
