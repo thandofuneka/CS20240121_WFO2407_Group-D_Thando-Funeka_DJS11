@@ -245,3 +245,67 @@ body {
 label {
   font-weight: 600;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-logo {
+    padding-bottom: 20px;
+  }
+  .show-header {
+    display: list-item;
+  }
+
+  .shows-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust for smaller screens */
+  }
+
+  .show-image {
+    height: 250px; /* Adjust image height for smaller screens */
+  }
+
+  .show-detail-image {
+    width: 100%; /* Make detail image responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .season-selector select {
+    width: 100%; /* Full width for select on smaller screens */
+  }
+
+  .back-button, .play-button {
+    width: 100%; /* Full width buttons on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo {
+    font-size: x-large; /* Adjust logo size for mobile */
+    padding-bottom: 15px;
+  }
+
+  .nav-link {
+    font-size: medium; /* Adjust link size for mobile */
+  }
+
+  .show-card {
+    padding: 10px; /* Adjust padding for show cards */
+  }
+
+  .episode-card {
+    padding: 10px; /* Adjust padding for episode cards */
+  }
+
+  .show-header {
+    display: list-item;
+    padding: 0;
+  }
+}

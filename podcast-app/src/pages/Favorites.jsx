@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { FavoritesContext } from '../context/FavouritesContext';
+import { FavoritesContext } from '../context/FavContext';
 import EpisodeCard from '../components/EpisodeCard';
 
 function Favorites() {

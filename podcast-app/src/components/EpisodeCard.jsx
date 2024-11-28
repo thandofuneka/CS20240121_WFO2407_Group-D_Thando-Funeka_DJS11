@@ -1,12 +1,11 @@
 import { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { FavoritesContext } from '../context/FavouritesContext';
+import { FavoritesContext } from '../context/FavContext';
 import AudioPlayer from './AudioPlayer';
 
 function EpisodeCard({ episode, seasonNumber, showTitle }) {
   const { addFavorite, removeFavorite, favorites } = useContext(FavoritesContext);
   const isEpisodeFavorite = favorites.some(fav => fav.id === episode.id);
-
 
   const handleFavoriteToggle = () => {
     if (isEpisodeFavorite) {

@@ -1,11 +1,7 @@
-import { createContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { FavoritesContext } from './FavContext';
 
-export const FavoritesContext = createContext({
-  favorites: [],
-  addFavorite: () => {},
-  removeFavorite: () => {}
-});
 
 export function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState(() => {
