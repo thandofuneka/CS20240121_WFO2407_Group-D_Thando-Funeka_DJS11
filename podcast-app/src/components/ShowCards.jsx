@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { genreTitles } from './genreTitles';
 
 function ShowCard({ show }) {
   return (
@@ -15,6 +16,9 @@ function ShowCard({ show }) {
         <div className="show-seasons">
           Seasons: {show.seasons}
         </div>
+        <div className="show-genres">
+          Genres: {show.genres.map(genreId => genreTitles[genreId]).join(', ')} 
+        </div> 
       </div>
     </Link>
   );

@@ -1,21 +1,11 @@
 import { useState, useEffect } from 'react';
 import { api } from '../services/api';
 import PropTypes from 'prop-types';
+import { genreTitles } from './genreTitles';
 
 function GenreFilter({ onGenreSelect }) {
   const [genres, setGenres] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState('');
-  const genreTitles = {
-    1: 'Personal Growth',
-    2: 'Investigative Journalism',
-    3: 'History',
-    4: 'Comedy',
-    5: 'Entertainment',
-    6: 'Business',
-    7: 'Fiction',
-    8: 'News',
-    9: 'Kids and Family',
-  }; //Mapping genre Ids to titles for display
 
   useEffect(() => {
     const fetchGenres = async () => {
