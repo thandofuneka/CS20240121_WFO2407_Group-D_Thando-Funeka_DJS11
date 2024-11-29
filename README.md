@@ -1,6 +1,43 @@
 # 🎵 PODCAST APP | PORTFOLIO PIECE 💿
 [DJS11] Starter Instructions for the Final Portfolio Piece Submission 🚀
 
+# 🎵 PODCAST APP | PORTFOLIO PIECE 💿
+
+## Introduction
+This Podcast App is a portfolio project designed to showcase the ability to build a fully functional web application using React. The app allows users to browse, listen to, and manage their favorite podcasts, providing a seamless user experience.
+
+## Setup Instructions
+To set up the project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/podcast-app.git
+   cd podcast-app
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the application:**
+   ```bash
+   npm start
+   ```
+
+## Usage Examples
+- **Browsing Shows:** Users can view a list of available podcasts and their details.
+- **Listening to Episodes:** Click on any episode to start listening.
+- **Managing Favorites:** Users can mark episodes as favorites.
+
+## Contact Information
+For any inquiries or feedback, please reach out to:
+- **Name:** Thando Funeka
+- **Email:** thandofuneka1@gmail.com
+- **GitHub:** [thandofuneka](https://github.com/thandofuneka)
+
+
+
 
 <!-- omit in toc -->
 **Table of Contents**
