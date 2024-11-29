@@ -31,18 +31,16 @@ function Home() {
   });
 
   const handleGenreSelection = (genreId) => {
-    console.log('Selected Genre ID:', genreId);
-    setSelectedGenre(genreId);
+    setSelectedGenre(genreId); // Update the selected genre state
     if (!genreId) {
-      setFilteredShows(shows);
+      setFilteredShows(shows); // Reset filtered shows if no genre is selected
       return;
     }
 
     const genreFilteredShows = shows.filter(show => 
-      Array.isArray(show.genres) && show.genres.includes(Number(genreId))
+      Array.isArray(show.genres) && show.genres.includes(Number(genreId)) // Filter shows by selected genre
     );
-    console.log('Filtered Shows on Selection:', genreFilteredShows);
-    setFilteredShows(genreFilteredShows);
+    setFilteredShows(genreFilteredShows); // Update the state with filtered shows
   };
   
 

@@ -15,7 +15,7 @@ function GenreFilter({ onGenreSelect }) {
     7: 'Fiction',
     8: 'News',
     9: 'Kids and Family',
-  };
+  }; //Mapping genre Ids to titles for display
 
   useEffect(() => {
     const fetchGenres = async () => {
@@ -31,9 +31,9 @@ function GenreFilter({ onGenreSelect }) {
   }, []);
 
   const handleGenreChange = (e) => {
-    const genreId = e.target.value;
-    setSelectedGenre(genreId);
-    onGenreSelect(genreId);
+    const genreId = e.target.value; // Get the selected genre ID from the event
+    setSelectedGenre(genreId); // Update the selected genre state
+    onGenreSelect(genreId); // Call the parent function to notify about the genre selection
   };
 
   return (

@@ -14,11 +14,11 @@ export function FavoritesProvider({ children }) {
   }, [favorites]);
 
   const addFavorite = (episode) => {
-    setFavorites(prev => [...prev, episode]);
+    setFavorites(prev => [...prev, episode]); // Add a new episode to the favorites list
   };
 
   const removeFavorite = (episodeId) => {
-    setFavorites(prev => prev.filter(ep => ep.id !== episodeId));
+    setFavorites(prev => prev.filter(ep => ep.id !== episodeId)); // Remove an episode from favorites by ID
   };
 
   return (

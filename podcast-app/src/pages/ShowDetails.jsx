@@ -5,8 +5,8 @@ import SeasonList from '../components/SeasonList';
 import BackButton from '../components/BackButton';
 
 function ShowDetails() {
-  const { id } = useParams();
-  const { show, loading, error } = useShowDetails(id);
+  const { id } = useParams(); // Get the show ID from the URL parameters
+  const { show, loading, error } = useShowDetails(id); // Fetch show details using custom hook
   const [selectedSeason, setSelectedSeason] = useState(1);
 
   if (loading) return <div>Loading show details...</div>;

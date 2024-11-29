@@ -3,7 +3,7 @@ import { FavoritesContext } from '../context/FavContext';
 import EpisodeCard from '../components/EpisodeCard';
 
 function Favorites() {
-  const { favorites } = useContext(FavoritesContext);
+  const { favorites } = useContext(FavoritesContext); //Access favourites from context
 
   return (
     <div className="favorites-page">
@@ -15,7 +15,7 @@ function Favorites() {
           {favorites.map(episode => (
             <EpisodeCard
               key={episode.id}
-              episode={episode}
+              episode={episode} // Pass the episode data to the EpisodeCard component
               seasonNumber={episode.seasonNumber}
               showTitle={episode.showTitle}
             />
